@@ -43,11 +43,18 @@ public class LabyConsole {
     public void affiche(Labyrinthe laby) 
     {
         for(int caseIndex=0; caseIndex < laby.getGrille().size(); caseIndex++){
+            if (laby.getGrille().get(caseIndex).getVisited()) {
+                System.out.println('V');
+            }
             if (laby.getGrille().get(caseIndex) instanceof CaseTrou) {
                 System.out.println('_');
             }
             if (laby.getGrille().get(caseIndex) instanceof CaseMur ) {
                 System.out.println('X');
+            }
+            String newLine = System.getProperty("line.separator");
+            if (caseIndex % laby.getTailleX() == 0) {
+                System.out.println(newLine);
             }
         }
     } 

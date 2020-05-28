@@ -27,4 +27,8 @@ public class Labyrinthe {
     public ArrayList<Case> getGrille() {
         return grille;
     }
+    
+    public int getTailleX() {
+        return tailleX;
+    }
 }
