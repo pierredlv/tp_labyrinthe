@@ -44,7 +44,15 @@ public class Labyrinthe {
      * @throws ImpossibleMoveException :  déplacement impossible
      */
     public void move(int ligne, int colonne) throws ImpossibleMoveException {
-        
+        int caseNewPosition = ligne * tailleX + colonne;
+        if (!grille.get(caseNewPosition).canMoveToCase()) {
+            throw new ImpossibleMoveException("Cannot move to this case");
+        }
+        else {
+            grille.get(caseNewPosition).setVisited();
+            posX = colonne;
+            posY = ligne;
+        }
     }
 
 }
