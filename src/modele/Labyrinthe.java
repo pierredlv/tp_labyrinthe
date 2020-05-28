@@ -5,6 +5,7 @@
  */
 package modele;
 import controler.FileFormatException;
+import controler.ImpossibleMoveException;
 import java.util.*;
 import java.io.*;
 
@@ -31,4 +32,19 @@ public class Labyrinthe {
     public int getTailleX() {
         return tailleX;
     }
+    
+     /**
+     * Tente de se déplacer dans la case ligne et colonne en paramètres du labyrinthe et de la visiter.
+     * Il génère et propage l’exception ImpossibleMoveException en cas d’impossibilité de déplacement : voir la méthode
+     *  canMoveToCase définie dans l’interface Case et implémentée dans la classe CaseImplementee.
+     *  S’il est possible de s’y déplacer, on la visite grâce à la méthode setVisited de la classe CaseImplementee
+     *
+     * @param ligne
+     * @param colonne
+     * @throws ImpossibleMoveException :  déplacement impossible
+     */
+    public void move(int ligne, int colonne) throws ImpossibleMoveException {
+        
+    }
+
 }
