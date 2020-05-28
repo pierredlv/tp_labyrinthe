@@ -8,6 +8,7 @@ import controler.FileFormatException;
 import controler.ImpossibleMoveException;
 import java.util.*;
 import java.io.*;
+import java.util.Scanner;
 
 /**
  *
@@ -22,7 +23,9 @@ public class Labyrinthe {
     private ArrayList<Case> grille; // liste des cases du labyrinthe
 
     public Labyrinthe(File fic) throws FileFormatException {
-        System.out.println("Ok");
+        //Scanner sc = new Scanner(fic);
+        // Create Labyrinth
+        
     }
     
     public ArrayList<Case> getGrille() {
@@ -54,5 +57,18 @@ public class Labyrinthe {
             posY = ligne;
         }
     }
+    
+        /**
+     * Retourne l’objet de la Case de la grille (liste des cases) du labyrinthe à partir de ses positions lig et col en paramètres
+     *
+     * @param lig
+     * @param col
+     * @return
+     */
+    public Case getCase(int lig, int col) {
+        int casePosition = lig * tailleX + col;
+        return grille.get(casePosition);
+    }
+
 
 }
